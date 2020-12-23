@@ -1,0 +1,12 @@
+{% extends "tickets/base.html"%}
+{% block title %}
+    <title>Inflate tires</title>
+{% endblock title %}
+{% block content%}
+    <body>
+        <div>Your number is {{ ticket.customer_ticket }}</div>
+        <div>Please wait around {{ ticket.estimated_time }} minutes</div>
+    </body>
+{% endblock content %}
+
+

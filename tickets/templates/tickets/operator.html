@@ -1,0 +1,13 @@
+{% extends "tickets/base.html"%}
+{% block title %}
+    <title>Operator</title>
+{% endblock title %}
+{% block content%}
+    <div>Change oil queue: {{ ticket.oil_tickets|length }}</div>
+    <div>Inflate tires queue: {{ ticket.tire_tickets|length }}</div>
+    <div>Get diagnostic queue: {{ ticket.diagnostic_tickets|length }}</div>
+
+    <form action="{% url 'next-customer' %}" method="post">{% csrf_token %}
+        <button value={{next_path}} name="next_button" type="submit">Process next</button>
+    </form>
+{% endblock content %}
